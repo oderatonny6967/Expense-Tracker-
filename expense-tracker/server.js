@@ -9,9 +9,12 @@ app.use(bodyParser.json());
 app.use('/auth', authRoutes);
 app.use('/expense', expenseRoutes);
 // Define a root route
-app.get('/', (req, res) => {
-  res.send('Welcome to the Expense Tracker API');
-});
+
+app.use(express.static('public'));
+
+//app.get('/', (req, res) => {
+ // res.send('Welcome to the Expense Tracker API');
+//});
 
 
 const PORT = process.env.PORT || 3000;
